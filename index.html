@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>ES 6</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<style>
+	.label-secondary {
+		background-color: aliceblue;
+		font-size: 14px;
+		/*color: blueviolet;*/
+		padding: 2px 5px;
+		font-weight: 500;
+	}
+</style>
+</head>
+
+<div class="container">
+	<div class="row content">
+		<div class="col-sm-12">
+			<h4><small>Ecma scripts examples</small></h4>
+			<hr>
+
+			<table class="table table-bordered">
+						<!--	var let and const-->
+						<tr>
+							<th colspan="3">var, let, and const
+							<p class="label-secondary">
+								Var : It has <stong> function scope </stong>, can be over written<br>
+								Let : It has <stong> Block scope </stong>, can be over written<br>
+								Const : It has <stong> Block scope </stong>, can not be over written
+							</p>
+							</th>
+						</tr>
+						<tr>
+							<td width="33%">
+								<pre><code>
+function fn(ss) {
+	if(ss) {
+		<span class="text-danger">let</span> name = "sachin";
+	}
+	console.log( name);
+}
+fn(true);
+<span></span><button class="btn btn-success btnShowOutPut btn-xs">Show output</button>
+<span class="class_output label-warning"><strong>Output</strong> : name value will <u>undefined</u></span></span>
+==================================
+<span class="text-danger">let</span> name = "sachin";
+if( true) {
+    <span class="text-danger">let</span> name = "Udmale";
+    console.log(name);
+}
+console.log(name);
+<span><button class="btn btn-success btnShowOutPut btn-xs">Show output</button>
+<span class="class_output label-warning"><strong>Output: </strong> Udmale  sachin</code></pre></span></span>
+							</td>
+
+
+							<td width="33%"><pre><code>
+function fn(ss) {
+	if(ss) {
+		<span class="text-danger">var</span> name1 = "sachin";
+	}
+	console.log('name: ' + name1);
+}
+fn(true);
+<span><button class="btn btn-success btnShowOutPut btn-xs">Show output</button>
+<span class="class_output label-warning"><strong>Output: </strong>sachin</span></span>
+==================================
+<span class="text-danger">var</span> name2 = "sachin";
+if( true) {
+    <span class="text-danger">var</span> name2 = "udmale";
+    console.log(name2);
+}
+console.log(name2);
+<span><button class="btn btn-success btnShowOutPut btn-xs">Show output</button>
+<span class="class_output label-warning"><strong>Output: </strong> udmale  udmale</code></pre></span></span>
+
+							</td>
+							<td width="33%">
+								<pre><code>
+<span class="text-danger">const</span> name3 = "sachin";
+if( true) {
+    <span class="text-danger">const </span>name3 = "udmale";
+    console.log(name3);
+}
+console.log(name3);
+<span><button class="btn btn-success btnShowOutPut btn-xs">Show output</button>
+<span class="class_output label-warning"><strong>Output: </strong> udmale  Sachin</span></span>
+								</code></pre>
+							</td>
+
+
+						</tr>
+
+						<!--string literals-->
+						<tr>
+							<th colspan="3">
+								String Literals / Template Strings
+								<p class="label-secondary">Made use of backtick key<br>
+									To define variable and returning function use ${}. e.g. <span class="text-danger">`variable is  ${ variable_name, funcion( a, b, c ) }  ;`</span>
+								</p>
+							</th>
+						</tr>
+						<tr>
+							<td colspan="3"><pre><code>
+		var fname = "sachin";
+		var lname = "Udmale";
+		let a = 20;
+		let b = 10;
+		// use backtick
+console.log( `My first name is ${ fname } . My last name is ${ lname } Addition is : ${ a + b }` );
+							</code></pre>
+							</td>
+						</tr>
+
+						<!--Array Destructuring-->
+						<tr>
+							<th colspan="3">
+								Array Destructuring - use of squary bracket
+								<p class="label-secondary">
+									its a js expression that makes it possible to unpack values from arrays, or properties from array, into distinct variables
+								</p>
+							</th>
+						</tr>
+						<tr>
+							<td colspan="2"><pre><code>
+const languages = ['js','html','css','php'];
+// traditional way of accessing js array elements
+// let top1 = languages[0]; let top2 = languages[1]; let top3 = languages[2]; let top4 = languages[3];
+
+// ES6 - Sequence does matter
+let [ top1, top2, top3, top4 ] = languages;
+console.log( `elements are : ${top1}, ${top2}, ${top3}, ${top4}` );
+
+// We can skip elements also
+let [ fav, , , leastFav ] = languages;
+console.log( `favourite : ${fav} AND Least Favourite : ${leastFav}` );
+
+// get first two elements
+let [top5,top6] = languages;
+console.log(`top5 : ${top5} AND top6 : ${top6}`);
+							</code></pre>
+							</td>
+							<td colspan="2"><pre><code>
+<span class="badge badge-primary">Challenge : </span> Write a program using array destructuring to swipe two numbers without using third variable
+let a = 5;
+let b = 6;
+console.log(` a : ${a} , b :${b}`);
+<span></span><button class="btn btn-success btnShowOutPut btn-xs">Show output</button>
+<span class="class_output label-warning">[a,b] = [b,a];</span></span>console.log(` a : ${a} , b :${b}`);
+							</code></pre>
+							</td>
+
+						</tr>
+					</table>
+		</div>
+	</div>
+</div>
+
+<footer class="container-fluid">
+	<p>Footer Text</p>
+</footer>
+
+</body>
+</html>
+
+<script>
+	$('.btnShowOutPut').on('click',function(){
+		let Spanvisible = $(this).siblings('.class_output').css('display');
+		$(this).siblings('.class_output').css('display', 'none' == Spanvisible ? 'block' : 'none' );
+	})
+	$('.class_output').css('display','none');
+</script>
